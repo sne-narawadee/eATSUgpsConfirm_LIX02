@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ATS Confirm</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* ปิดการเลื่อน */
+        }
+        iframe {
+            border: 0; /* ปิดขอบของ iframe */
+            width: 100%;
+            height: 100%;
+            display: block; /* ปิดช่องว่างภายใน iframe */
+        }
+        #save-button {
+            position: absolute;
+            top: 50px; /* วางปุ่มไว้ที่ด้านบนของหน้าจอ */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: green; /* สีพื้นปุ่มเป็นสีเขียว */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000; /* ให้ปุ่มอยู่เหนือ iframe */
+            opacity: 0; /* เริ่มต้นด้วยความโปร่งใส */
+            transition: opacity 1s ease-in; /* การเปลี่ยนแปลงของความโปร่งใส */
+        }
+    </style>
+</head>
+<body>
+    <iframe
+      id="app"
+      src="https://script.google.com/macros/s/AKfycbypJMvdG1vkU4dK4xk6Hu_tULRsZCl_tfI0UwsYk5AsIo-3gLnf8MFqcVCmVPNgS9VptQ/exec"
+      allow="geolocation"
+      frameborder="0"
+      scrolling="no">
+    </iframe>
+    
+    <button id="save-button">บันทึก</button>
+
+    <script>
+        // ฟังก์ชันสำหรับเปิดลิงก์ใหม่เมื่อคลิกปุ่ม
+        document.getElementById('save-button').addEventListener('click', function() {
+            window.location.href = 'https://sne-narawadee.github.io/ATSGDailyRpt_LIX02';
+        });
+
+        // รอ 3 วินาที (3000 มิลลิวินาที) แล้วทำให้ปุ่มค่อยๆ ปรากฏ
+        window.onload = function() {
+            console.log('Window loaded. Starting timer...');
+            setTimeout(function() {
+                console.log('Timer completed. Showing button.');
+                document.getElementById('save-button').style.opacity = 1;
+            }, 3000); // 3000 มิลลิวินาที = 3 วินาที
+        };
+    </script>
+</body>
+</html>
