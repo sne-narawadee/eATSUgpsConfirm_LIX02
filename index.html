@@ -53,13 +53,13 @@
             window.location.href = 'https://sne-narawadee.github.io/eATSGDailyRpt_LIX02';
         });
 
-        // รอ 3 วินาที (3000 มิลลิวินาที) แล้วทำให้ปุ่มค่อยๆ ปรากฏ
+        // รอ 5 วินาที (5000 มิลลิวินาที) แล้วทำให้ปุ่มค่อยๆ ปรากฏ
         window.onload = function() {
             console.log('Window loaded. Starting timer...');
             setTimeout(function() {
                 console.log('Timer completed. Showing button.');
                 document.getElementById('save-button').style.opacity = 1;
-            }, 5000); // 3000 มิลลิวินาที = 3 วินาที
+            }, 5000); // 5000 มิลลิวินาที = 5 วินาที
         };
     </script>
 </body>
